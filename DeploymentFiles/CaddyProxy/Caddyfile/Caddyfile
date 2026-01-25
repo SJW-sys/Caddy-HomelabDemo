@@ -1,0 +1,66 @@
+# I like to breakout my config files into sections so I can easily manage them
+##############
+# Global settings
+##############
+
+{
+    acme_dns cloudflare {env.CLOUDFLARE_API_TOKEN}      # highly recommend you limit your API token to the zone and to just dns modifications
+    servers {
+        trusted_proxies cloudflare
+        client_ip_headers Cf-Connecting-Ip
+    }
+}
+
+##############
+# Reverse proxies to unsecure HTTPS backend, where the container is on the same docker network
+##############
+
+portainer.homelabdemo.mydomain.com {
+
+        reverse_proxy https://portainer:9443 {
+                header_up HOST {http.request.host} # redundant base feature in caddy, doing for ensuring standard config
+                header_up X-Real-IP {http.request.remote.host}
+                header_up X-Forwarded-For {http.request.remote.host} # redundant base feature in caddy, doing for ensuring standard config
+                header_up X-Forward-Proto {http.request.scheme} 
+                transport http {
+                        tls
+                        # below setting will skip standard ssl error message from potential mismatching cert (unless you loaded the cert on the server, fine for a homelab environment)
+                        tls_insecure_skip_verify
+                }
+        }
+}
+
+##############
+# Reverse proxies to different container on same Docker network with a http backend
+##############
+
+glance.homelabdemo.mydomain.com {
+
+        # Command to use my own preloaded certs, calling in the local block will overwrite the global settings
+        tls /PreloadedCerts/glance.homelabdemo.mydomain.com.fullpath.crt.pem /PreloadedCerts/glance.homelabdemo.mydomain.com.key.pem
+
+        reverse_proxy glance:8080
+}
+
+openwebui.homelabdemo.mydomain.com {
+        reverse_proxy openwebui:8080
+        tls
+}
+
+gitlab.homelabdemo.mydomain.com {
+        reverse_proxy gitlab:80
+        tls
+}
+
+# example of how to use tls internal 
+# test.homelabdemo.mydomain.com {
+#
+#        # Command to use a quick cert from caddy internal ca for testing, not ideal in prod environment
+#        tls internal
+#
+#        reverse_proxy CONTAINERNAME:CONTAINERPORT
+#}
+
+##############
+# Reverse proxies to different host with a http backend
+##############
