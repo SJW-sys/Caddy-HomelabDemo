@@ -1,5 +1,5 @@
 # Caddy-HomelabDemo
-Reverse proxy via config files.
+Demo of docker deployment via CI/CD pipeline for Caddy, a reverse proxy managed via config files.
 
 ## Things to note in a deployment of this tool
 - this is a DEMO, please see FAQ section of README
