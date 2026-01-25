@@ -30,6 +30,9 @@ this "demo" repo is based on real world local deployments in my Homelab. Some se
 ### Why a gitlab pipeline file (.gitlab-ci.yml)?
 I selfhost a Gitlab instance at home for experimentation, experience and privacy. So I use gitlab runners to deploy my pipelines, this is the native file for that. In the future I will update these demos to reflect githubs native pipelines (.github/workflows/PIPELING.yml), or maybe I'll do a jenkins demo for my own learning.
 
+### Why multiple branches
+I have a test and main branch to more demo a enterprise setup, where you might have people pushing changes to a protected test branch that is then has pipelines to stage tooling in a test space. Which once pulled into main, would deploy the same setup to PROD.
+
 ### Why Caddy over 'Traefik', 'HAproxy', 'Nginx proxy manager', etc?
 I have tried a few different proxy managers, but settled in Caddy for the straightforward nature and ability to quickly configure via file allowing for a IaC deployed Reverse Proxy.
 
