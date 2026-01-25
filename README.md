@@ -58,7 +58,6 @@ I wanted to do a proper code repo that could be poke around so you could see com
     - compose
     - Networking
     - bind mounts and volumes
-    - device passthrough
     - Permissions (capabilities)
     - environment variables
     - managing tooling multiple configurations files
