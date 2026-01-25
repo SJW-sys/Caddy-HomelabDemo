@@ -19,9 +19,9 @@ Reverse proxy via config files.
 - You have a domain name and are using dns validation with cloudflair, and have an API token setup
 
 ## Resources:
-github: https://github.com/caddyserver/caddy
-website: https://caddyserver.com/
-Documentation: https://caddyserver.com/docs/
+- github: https://github.com/caddyserver/caddy
+- website: https://caddyserver.com/
+- Documentation: https://caddyserver.com/docs/
 
 ## FAQ for repo visitors
 ### Why does the repo have 'Demo' in the title?
