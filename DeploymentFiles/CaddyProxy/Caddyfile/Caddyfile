@@ -64,3 +64,9 @@ gitlab.homelabdemo.mydomain.com {
 ##############
 # Reverse proxies to different host with a http backend
 ##############
+
+#containers behind gluten are tricky, because gluten connects directly to the nic, you cannot access them from the machines local or docker network, you basically have to hit the external side of your machine IP to access
+#browser.homelabdemo.mydomain.com {
+#        reverse_proxy YOURIP:11000
+#        tls
+#}
