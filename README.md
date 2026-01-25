@@ -17,6 +17,10 @@ Demo of docker deployment via CI/CD pipeline for Caddy, a reverse proxy managed 
 - DNS resolver is already configured
 - Updating .env file for your needs
 - You have a domain name and are using dns validation with Cloudflair, and have an API token setup
+- Fix Caddyfile for the Kasm Browser behind Gluten
+
+## Reverse proxy for gluten setups
+These VPN containers are tricky to navigate around, the best thing I have found is either using a external reverse proxy, or have caddy hit the host nic ip to navigate correctly to a service due to how gluten ensures traffic is routed. Currently for this service the caddyfile has a commented out section you will need to add back, and fix the IP to your host machine IP. This can be passed but is currently outside the scope of this demo.
 
 ## Resources:
 - github: https://github.com/caddyserver/caddy
@@ -43,7 +47,7 @@ I make it a habit that my files typically have dozens of in-line comments to bet
 yes! for the most part this will be siloed, but most of these demos connect to this exact project.
 
 ### Was AI used to generate this?
-No, but I have learned and expanded my knowledge of the tools within this project with AI to design a better solution. AI I see as a tool and resource that is loose in the market place regardless of your stance, that you need to follow, know how to use, while educating others on its complexities and putting safeguards around it. I firmly design and deploy with my own brainstorming, knowledge, and troubleshooting as my first approach, but i have used AI to troubleshoot, help expand understanding, research, interpreter (ie. Bash to Go) and experimented with vibe coding. I have deeper thoughts and opinions, but those are better discussed rather than a few sentences in a git repo. 
+No, but I have learned and expanded my knowledge of the tools within this project (and prior projects) with AI to design a better solution and skills for other deployments. AI I see as a tool and resource that is loose in the market place regardless of your stance, that you need to follow, know how to use, while educating others on its complexities and putting safeguards around it. I firmly design and deploy with my own brainstorming, knowledge, and troubleshooting as my first approach, but i have used AI to troubleshoot, help expand understanding, research, interpreter (ie. Bash to Go) and experimented with vibe coding. I have deeper thoughts and opinions, but those are better discussed rather than a few sentences in a git repo. 
 
 ## Issues to note with this "demo"
 I wanted to do a proper code repo that could be poke around so you could see commits and pulls that you might normally see in a team production repo, unfortunately due to the overhead and this [issue](https://github.com/orgs/community/discussions/6292), I will be "cutting corners" and doing everything locally then pushing to main directly from my machine. However, I will still leave the demo "main" and "test" branches with there protections.
