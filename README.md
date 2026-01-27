@@ -33,7 +33,7 @@ These VPN containers are tricky to navigate around, the best thing I have found 
 
 ## FAQ for repository visitors
 ### Why does the repository have 'Demo' in the title?
-this "demo" repository is based on real world local deployments in my Homelab. Some settings may be changed, or different for privacy and safety.
+this "demo" repository is based on real world local deployments in my Homelab. Some settings may be changed, or different for privacy and safety.Typically in a real world scenario, you would use .gitignore to filter out potential sensitive files, as well has have pipeline jobs to find secrets. Typically you also consider storing variables within the git repository platform itself in a mask state to prevent jr devs from pushing secrets accidentally.
 
 ### Why a GitLab pipeline file (.gitlab-ci.yml)?
 I selfhost a GitLab instance at home for experimentation, experience and privacy. So I use GitLab runners to deploy my pipelines, this is the native file for that. In the future I will update these demos to reflect GitHub native pipelines workflows (.github/workflows/PIPELINE.yml), or maybe I'll do a Jenkins demo for my own learning.
