@@ -52,7 +52,7 @@ gitlab.homelabdemo.mydomain.com {
         tls
 }
 
-# example of how to use tls internal 
+# example of how to use tls internal for testing
 # test.homelabdemo.mydomain.com {
 #
 #        # Command to use a quick cert from caddy internal ca for testing, not ideal in prod environment
