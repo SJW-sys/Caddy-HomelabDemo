@@ -11,8 +11,8 @@ services:
     volumes:
       - caddy-config:/config
       - caddy-data:/data
-      - ~/CaddyProxy/Caddyfile:/etc/caddy:ro # directory where my caddyfile is stored on host system, set to :ro (readonly) for best sec practices
-      - ~/CaddyProxy/CustomCerts:/PreloadedCerts:ro # this is staging to allow custom certs outside of container from is stored on host system (need to be 711 permissions and in .pem format), set to :ro (readonly) for best sec practices
+      - ./CaddyProxy/Caddyfile:/etc/caddy:ro # directory where my caddyfile is stored on host system, set to :ro (readonly) for best sec practices
+      - ./CaddyProxy/CustomCerts:/PreloadedCerts:ro # this is staging to allow custom certs outside of container from is stored on host system (need to be 711 permissions and in .pem format), set to :ro (readonly) for best sec practices
     networks:
       CaddyProxyNet:
         ipv4_address: 172.200.0.200 #hard coding id, doing this for services that require a "trusted-proxy" var to be set, using static ip over range. Setting to a high value to ensure if the containers all boot out of order on host start up, that caddy can reserve an ip without a clash issue.
