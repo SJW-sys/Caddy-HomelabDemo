@@ -1,7 +1,7 @@
 #File Version p.2025.11.19.001
 services:
   caddy:
-    image: caddy:latest
+    image: caddy:${IMAGE_TAG:-latest}
     container_name: CaddyProxy
     restart: unless-stopped # I prefer unless-stopped, it make troubleshooting/maintance windows with reboots on my homelab easier to manage dozens of containers
     env_file:
