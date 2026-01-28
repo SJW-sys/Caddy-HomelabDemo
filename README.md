@@ -18,6 +18,7 @@ Demo of docker deployment via CI/CD pipeline for Caddy, a reverse proxy managed 
 - target Debian 13.3 (trixie) server at a minimum has docker and openssh server (w/ .pub key) setup.
 - DNS resolver is already configured.
 - Updating .env file for your needs.
+- Have access to an account with sudo level permissions.
 - You have a domain name and are using DNS validation with Cloudflair, and have an API token setup. You will need to change this in the Caddyfile.
 - Have a service hosted on the same host machine (the target server) as Caddy, ideally from another one of my demos. Otherwise, please modify the Caddyfile.
 - Input your server IP or hostname in the Caddyfile for the Kasm Browser behind Gluten (only matters if deploying that project).
