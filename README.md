@@ -14,7 +14,8 @@ Demo of docker deployment via CI/CD pipeline for Caddy, a reverse proxy managed 
 
 ## Prerequisite in a deployment of this exact repo
 - GitLab and a runner are Deployed and configured to talk to target Debian 13.3 (trixie) server to deploy Caddy.
-- Some Variables have been configured within GitLab to inject into a pipeline at runtime.
+- Some Variables have been configured within Gitlab to inject into a pipeline at runtime:
+    SSH_HOMELABDEMO_PRIVATE_KEY, REMOTE_PORT, PROD_REMOTE_USER , PROD_REMOTE_HOST , TEST_REMOTE_USER , TEST_REMOTE_HOST
 - target Debian 13.3 (trixie) server at a minimum has docker and openssh server (w/ .pub key) setup.
 - DNS resolver is already configured.
 - Updating .env file for your needs.
