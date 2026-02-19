@@ -29,9 +29,11 @@ Demo of docker deployment via CI/CD pipeline for Caddy, a reverse proxy managed 
 These VPN containers are tricky to navigate around, the best thing I have found is either using a external reverse proxy, or have Caddy hit the host network card ip address to navigate correctly to a service due to how gluten ensures traffic is routed. Currently for this service the Caddyfile has a commented out section you will need to add back, and fix the IP to your host machine IP. This can be passed but is currently outside the scope of this demo.
 
 ## Resources:
-- github: https://github.com/caddyserver/caddy
-- website: https://caddyserver.com/
-- Documentation: https://caddyserver.com/docs/
+Github: https://github.com/caddyserver/caddy
+DockerHub: https://hub.docker.com/_/caddy
+Website: https://caddyserver.com/
+Community: https://caddy.community/
+Documentation: https://caddyserver.com/docs/
 
 ## FAQ for repository visitors
 ### Why does the repository have 'Demo' in the title?
